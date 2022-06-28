@@ -1,23 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {Button} from "./components/Button";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1> Type Speed Duel</h1>
+     <Button buttonStyle="btn--primary--solid" buttonSize="btn--large">Einzelspielermodus</Button>
+     <Button buttonStyle="btn--success--solid" buttonSize="btn--large">Mehrspielermodus</Button>
     </div>
   );
 }
