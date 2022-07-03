@@ -1,13 +1,20 @@
 
 import './App.css';
 import {Button} from "./components/Button";
+import Singleplayer from './pages/Singleplayer';
+import Home from './pages/Home';
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-     <h1> Type Speed Duel</h1>
-     <Button buttonStyle="btn--primary--solid" buttonSize="btn--large">Einzelspielermodus</Button>
-     <Button buttonStyle="btn--success--solid" buttonSize="btn--large">Mehrspielermodus</Button>
+      <Router>
+      <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/singleplayer" element={<Singleplayer />} />
+     </Routes>
+     </Router>
     </div>
   );
 }

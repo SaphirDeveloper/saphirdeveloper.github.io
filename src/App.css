@@ -1,3 +1,7 @@
+:root{
+  /*background-color: #282828;  später für dark mode*/
+}
+
 .App {
   display: flex;
   flex-direction: column;
