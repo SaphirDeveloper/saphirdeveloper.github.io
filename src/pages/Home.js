@@ -9,7 +9,7 @@ function Home() {
         <div className="Home">
         <h1> Type Speed Duel</h1>
         <Button buttonStyle="btn--primary--solid" buttonSize="btn--large" onClick={ () => {navigate("/singleplayer"); }}>Einzelspielermodus</Button>
-        <Button buttonStyle="btn--success--solid" buttonSize="btn--large">Mehrspielermodus</Button>
+        <Button buttonStyle="btn--success--solid" buttonSize="btn--large" onClick={ () => {navigate("/multiplayer"); }}>Mehrspielermodus</Button>
          </div>
     );
 }
