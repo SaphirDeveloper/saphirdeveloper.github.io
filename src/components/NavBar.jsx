@@ -1,16 +1,18 @@
 import React from "react";
 import "./navBar.css";
-
-let playerId = -1;
+import {useNavigate} from "react-router-dom";
 
 export const NavBar = () => {
-
+    let navigate = useNavigate();
     return (
     <nav>
-        <h3 className="navWebsiteTitle">Type Speed Duel</h3>
+        <h3 className="navWebsiteTitle" onClick={ () => {navigate("../home"); }}>Type Speed Duel</h3>
+        <ul className="navSites">
+            <li className="navListItem" onClick={ () => {navigate("../highscores"); }}>Rangliste</li>
+        </ul>
         <ul className="navLogIn">
-            <li className="navLogInItem">Einloggen</li>
-            <li className="navLogInItem">Neues Konto erstellen</li>
+            <li className="navListItem">Einloggen</li>
+            <li className="navListItem">Neues Konto erstellen</li>
         </ul>
     </nav>
     );

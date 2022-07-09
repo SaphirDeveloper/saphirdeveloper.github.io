@@ -1,0 +1,8 @@
+.tableHighscores th {
+    padding: 8px;
+    border: 1px solid;
+}
+
+.tableHighscores {
+    border-collapse: collapse;
+}

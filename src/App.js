@@ -1,23 +1,23 @@
 
 import './App.css';
-import {Button} from "./components/Button";
 import {NavBar} from "./components/NavBar";
 import Singleplayer from './pages/Singleplayer';
 import Multiplayer from './pages/Multiplayer';
+import Highscores from './pages/Highscores';
 import Home from './pages/Home';
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-
       <Router>
+      <NavBar />
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/singleplayer" element={<Singleplayer />} />
       <Route path="/multiplayer" element={<Multiplayer />} />
+      <Route path="/highscores" element={<Highscores />} />
      </Routes>
      </Router>
     </div>

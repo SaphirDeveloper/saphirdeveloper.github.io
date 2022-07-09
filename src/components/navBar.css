@@ -1,15 +1,15 @@
-.navLogIn {
+.navLogIn, .navSites {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.navLogInItem {
+.navListItem {
     padding: 16px;
     float: left;
 }
 
-.navLogInItem:hover {
+.navListItem:hover {
     background-color: crimson;
     cursor: pointer;
 }
