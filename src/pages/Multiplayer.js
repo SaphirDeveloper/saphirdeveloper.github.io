@@ -1,6 +1,7 @@
 import React from "react";
 import {Button} from "../components/Button";
 import {useNavigate} from "react-router-dom";
+import {GamesTable} from "../components/GamesTable"
 
 const url = 'https://gruppe3.toni-barth.com/';
 
@@ -45,7 +46,8 @@ function Multiplayer() {
         <h1>Multiplayer</h1>
         <Button buttonStyle="btn--success--solid" buttonSize="btn--medium" onClick={ () => {navigate("../home"); }}>Home</Button>
         <Button buttonStyle="btn--primary--solid" buttonSize="btn--medium" onClick={ () => {createGame();}}>Raum erstellen</Button>
-         </div>
+        <GamesTable />
+        </div>
     );
 }
 
