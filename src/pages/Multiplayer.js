@@ -18,10 +18,15 @@ async function createPlayer() {
 
 async function createGame() {
     let owner = 25;
-        fetch(url + 'games/', {method: 'POST', headers: {'Content-Type':'application/json',}, body: JSON.stringify({owner: owner})})
+    let id = -1;
+    await fetch(url + 'games/', {method: 'POST', headers: {'Content-Type':'application/json',}, body: JSON.stringify({owner: owner})})
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data);
+                id = data.id;
+            })
             .catch(ex => console.error(ex)); 
+    return id;
 }
 
 async function deletePlayer() {
@@ -45,7 +50,11 @@ function Multiplayer() {
         <div className="Multiplayer">
         <h1>Multiplayer</h1>
         <Button buttonStyle="btn--success--solid" buttonSize="btn--medium" onClick={ () => {navigate("../home"); }}>Home</Button>
-        <Button buttonStyle="btn--primary--solid" buttonSize="btn--medium" onClick={ () => {createGame();}}>Raum erstellen</Button>
+        <Button buttonStyle="btn--primary--solid" buttonSize="btn--medium" onClick={ async () => {
+            const ID = await createGame();
+            navigate("../gamelobby/" + ID);
+            }
+            }>Raum erstellen</Button>
         <GamesTable />
         </div>
     );

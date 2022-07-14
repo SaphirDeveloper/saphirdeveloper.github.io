@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import LogIn from './pages/LogIn';
 import SignIn from './pages/SignIn';
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import { GameLobby } from './pages/GameLobby';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Route path="/highscores" element={<Highscores />} />
       <Route path="/login" element={<LogIn />} />
       <Route path="/signin" element={<SignIn />} />
-      
+      <Route path="/gamelobby/:gameID" element={<GameLobby />} />
      </Routes>
      </Router>
     </div>
