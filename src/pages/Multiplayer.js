@@ -15,6 +15,14 @@ async function createPlayer() {
     }
 }
 
+async function createGame() {
+    let owner = 25;
+        fetch(url + 'games/', {method: 'POST', headers: {'Content-Type':'application/json',}, body: JSON.stringify({owner: owner})})
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(ex => console.error(ex)); 
+}
+
 async function deletePlayer() {
     let player = prompt("Bitte Spielerid des zu löschenden Spielers eingeben");
 
@@ -34,11 +42,9 @@ function Multiplayer() {
     let navigate = useNavigate();
     return (
         <div className="Multiplayer">
-        <h1> Du hast auf Multiplayer geklickt</h1>
-        <Button buttonStyle="btn--success--solid" buttonSize="btn--large" onClick={ () => {navigate("../home"); }}>Home</Button>
-        <Button buttonStyle="btn--primary--solid" buttonSize="btn--large" onClick={ () => {createPlayer();}}>Neuer Spieler</Button>
-        <Button buttonStyle="btn--danger--solid" buttonSize="btn--large" onClick={ () => {deletePlayer();}}>Lösche Spieler</Button>
-        <Button buttonStyle="btn--warning--solid" buttonSize="btn--large" onClick={ () => {fetchPlayers();}}>Spielerliste</Button>
+        <h1>Multiplayer</h1>
+        <Button buttonStyle="btn--success--solid" buttonSize="btn--medium" onClick={ () => {navigate("../home"); }}>Home</Button>
+        <Button buttonStyle="btn--primary--solid" buttonSize="btn--medium" onClick={ () => {createGame();}}>Raum erstellen</Button>
          </div>
     );
 }

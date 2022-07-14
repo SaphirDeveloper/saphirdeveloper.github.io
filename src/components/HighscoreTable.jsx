@@ -54,7 +54,8 @@ class TableData extends React.Component {
                 <tbody>
                     {players.map(player => (
                         <tr key={player.id}>
-                            <th>{player.name} + {player.id} </th>
+                            <th> {player.id}</th>
+                            <th>{player.name}</th>
                             <th>{player.bestPoints}</th>
                             <th>{player.bestCharsPerSecond}</th>
                         </tr>
@@ -70,6 +71,7 @@ export const HighscoreTable = () => {
     <table className="tableHighscores">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Spielername</th>
                 <th>Beste Punktzahl</th>
                 <th>Beste Schreibgeschwindigkeit</th>
