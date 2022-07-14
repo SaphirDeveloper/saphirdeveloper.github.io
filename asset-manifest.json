@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/type-speed-duel/static/css/main.f28b8407.css",
-    "main.js": "/type-speed-duel/static/js/main.34bd9780.js",
-    "static/js/787.b72d9261.chunk.js": "/type-speed-duel/static/js/787.b72d9261.chunk.js",
-    "index.html": "/type-speed-duel/index.html",
-    "main.f28b8407.css.map": "/type-speed-duel/static/css/main.f28b8407.css.map",
-    "main.34bd9780.js.map": "/type-speed-duel/static/js/main.34bd9780.js.map",
-    "787.b72d9261.chunk.js.map": "/type-speed-duel/static/js/787.b72d9261.chunk.js.map"
+    "main.css": "/static/css/main.f28b8407.css",
+    "main.js": "/static/js/main.c948d03c.js",
+    "static/js/787.b72d9261.chunk.js": "/static/js/787.b72d9261.chunk.js",
+    "index.html": "/index.html",
+    "main.f28b8407.css.map": "/static/css/main.f28b8407.css.map",
+    "main.c948d03c.js.map": "/static/js/main.c948d03c.js.map",
+    "787.b72d9261.chunk.js.map": "/static/js/787.b72d9261.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f28b8407.css",
-    "static/js/main.34bd9780.js"
+    "static/js/main.c948d03c.js"
   ]
 }
