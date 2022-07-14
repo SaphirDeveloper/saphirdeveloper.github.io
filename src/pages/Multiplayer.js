@@ -15,15 +15,6 @@ async function createPlayer() {
     }
 }
 
-/*async function createGame() {
-    let player = prompt("Bitte Besitzer eingeben");
- 
-        fetch(url + 'games/', {method: 'POST', headers: {'Content-Type':'application/json',}, body: JSON.stringify({name: owner})})
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(ex => console.error(ex));    
-} */
-
 async function deletePlayer() {
     let player = prompt("Bitte Spielerid des zu löschenden Spielers eingeben");
 
@@ -31,7 +22,6 @@ async function deletePlayer() {
         fetch(url + 'players/' + player + '/', {method: 'DELETE'}).catch(ex => console.error(ex));
     }
 }
-
 
 async function fetchPlayers() {
     fetch(url + 'players/')
