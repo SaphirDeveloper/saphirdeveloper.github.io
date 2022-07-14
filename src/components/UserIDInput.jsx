@@ -28,9 +28,10 @@ export class UserIDInput extends React.Component {
     }
 
     printMessage() {
-        if (this.state.player != null) {
+        if (this.state.player != null && this.state.player.name != null) {
             return (<p>User: {this.state.player.name}</p>);
-        } else if (this.state.error != null) {
+        }
+        else if (this.state.error != null) {
             return (<p>Error: {this.state.error.message}</p>);
         }
     }

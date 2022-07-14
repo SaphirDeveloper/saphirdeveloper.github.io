@@ -54,7 +54,7 @@ class TableData extends React.Component {
                 <tbody>
                     {players.map(player => (
                         <tr key={player.id}>
-                            <th>{player.name}</th>
+                            <th>{player.name} + {player.id} </th>
                             <th>{player.bestPoints}</th>
                             <th>{player.bestCharsPerSecond}</th>
                         </tr>
