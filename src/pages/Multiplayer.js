@@ -2,6 +2,7 @@ import React from "react";
 import {Button} from "../components/Button";
 import {useNavigate} from "react-router-dom";
 import {GamesTable} from "../components/GamesTable"
+import { getCookie } from "../extras/cookies";
 
 const url = 'https://gruppe3.toni-barth.com/';
 
@@ -16,17 +17,19 @@ async function createPlayer() {
     }
 }
 
-async function createGame() {
-    let owner = 25;
-    let id = -1;
-    await fetch(url + 'games/', {method: 'POST', headers: {'Content-Type':'application/json',}, body: JSON.stringify({owner: owner})})
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                id = data.id;
-            })
-            .catch(ex => console.error(ex)); 
-    return id;
+async function createGame(navigate) {
+    let owner = getCookie("id");
+    if (owner != "") {
+        await fetch(url + 'games/', {method: 'POST', headers: {'Content-Type':'application/json',}, body: JSON.stringify({owner: owner})})
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    navigate("../gamelobby/" + data.id)
+                })
+                .catch(ex => console.error(ex));
+    } else {
+        navigate("../login");
+    }
 }
 
 async function deletePlayer() {
@@ -48,14 +51,10 @@ function Multiplayer() {
     let navigate = useNavigate();
     return (
         <div className="Multiplayer">
-        <h1>Multiplayer</h1>
-        <Button buttonStyle="btn--success--solid" buttonSize="btn--medium" onClick={ () => {navigate("../home"); }}>Home</Button>
-        <Button buttonStyle="btn--primary--solid" buttonSize="btn--medium" onClick={ async () => {
-            const ID = await createGame();
-            navigate("../gamelobby/" + ID);
-            }
-            }>Raum erstellen</Button>
-        <GamesTable />
+            <h1>Multiplayer</h1>
+            <Button buttonStyle="btn--success--solid" buttonSize="btn--medium" onClick={ () => {navigate("../home"); }}>Home</Button>
+            <Button buttonStyle="btn--primary--solid" buttonSize="btn--medium" onClick={ async () => {createGame(navigate)}}>Raum erstellen</Button>
+            <GamesTable />
         </div>
     );
 }
