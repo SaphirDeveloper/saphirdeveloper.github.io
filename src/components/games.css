@@ -1,0 +1,10 @@
+.gameLobby {
+    padding: 16px;
+    border: 1px solid;
+    list-style: none;
+}
+
+.gameLobby li, .joinLobbyButton {
+    margin: 8px;
+}
+

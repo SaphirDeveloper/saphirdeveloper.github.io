@@ -1,8 +1,8 @@
 import React from "react";
 import {Button} from "../components/Button";
 import {useNavigate} from "react-router-dom";
-import {GamesTable} from "../components/GamesTable"
-import { getCookie } from "../extras/cookies";
+import {Games} from "../components/Games"
+import { getCookie, setCookie } from "../extras/cookies";
 
 const url = 'https://gruppe3.toni-barth.com/';
 
@@ -24,7 +24,8 @@ async function createGame(navigate) {
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
-                    navigate("../gamelobby/" + data.id)
+                    setCookie("game", data.id);
+                    navigate("../gamelobby/" + data.id);
                 })
                 .catch(ex => console.error(ex));
     } else {
@@ -54,7 +55,7 @@ function Multiplayer() {
             <h1>Multiplayer</h1>
             <Button buttonStyle="btn--success--solid" buttonSize="btn--medium" onClick={ () => {navigate("../home"); }}>Home</Button>
             <Button buttonStyle="btn--primary--solid" buttonSize="btn--medium" onClick={ async () => {createGame(navigate)}}>Raum erstellen</Button>
-            <GamesTable />
+            <Games navigate={navigate} />
         </div>
     );
 }
