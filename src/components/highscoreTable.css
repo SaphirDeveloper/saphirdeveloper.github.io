@@ -6,3 +6,33 @@
 .tableHighscores {
     border-collapse: collapse;
 }
+
+/* adapt table to different screen sizes */
+
+@media screen and (max-width: 550px) {
+
+    .tableHighscores {
+    font-size: 80%;
+    }
+} 
+
+@media screen and (max-width: 450px) {
+
+    .tableHighscores {
+    font-size: 70%;
+    }
+} 
+
+@media screen and (max-width: 400px) {
+
+    .tableHighscores {
+    font-size: 60%;
+    }
+} 
+
+@media screen and (max-width: 350px) {
+
+    .tableHighscores {
+    font-size: 50%;
+    }
+} 

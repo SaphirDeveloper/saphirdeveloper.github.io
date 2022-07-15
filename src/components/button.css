@@ -82,3 +82,22 @@
     padding: 15px 30px;
     font-size: 300%;   
 }
+
+/* adapt buttons to different screen sizes */
+
+@media screen and (max-width: 500px) {
+
+    .btn--large {
+    font-size: 200%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    .btn--large {
+        font-size: 100%;
+    }  
+    .btn--medium {
+        font-size: 100%;
+    }
+}
