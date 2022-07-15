@@ -11,7 +11,7 @@ export const NavBar = () => {
             <li className="navListItem" onClick={ () => {navigate("../highscores"); }}>Rangliste</li>
         </ul>
         <ul className="navLogIn">
-            <li className="navListItem"></li>
+            <li className="navListItem" onClick={ () => {navigate("../help"); }}>Hilfe</li>
             <li className="navListItem" onClick={ () => {navigate("../login"); }}>Einloggen</li>
             <li className="navListItem" onClick={ () => {navigate("../signin"); }}>Neues Konto erstellen</li>
         </ul>
