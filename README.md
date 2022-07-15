@@ -1,5 +1,5 @@
-#Dokumentation Type-Speed-Duel
+# Type-Speed-Duel
 
-##Klassen
+Gruppe 3: Martin Fuchs, Lennart Flauß
 
-##Methoden
+Webseite: https://saphirdeveloper.github.io/
