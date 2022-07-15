@@ -2,11 +2,7 @@ import React from "react";
 import {Button} from "../components/Button";
 import {useNavigate} from "react-router-dom";
 
-const url = 'https://gruppe3.toni-barth.com/';
-
-
-
-
+// A page to play the game alone (WIP)
 function Singleplayer() {
     let navigate = useNavigate();
     return (

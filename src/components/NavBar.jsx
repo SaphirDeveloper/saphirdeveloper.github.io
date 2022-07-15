@@ -2,6 +2,7 @@ import React from "react";
 import "./navBar.css";
 import {useNavigate} from "react-router-dom";
 
+// Navbar to switch between pages
 export const NavBar = () => {
     let navigate = useNavigate();
     return (

@@ -1,6 +1,7 @@
 import React from "react";
 import './HelpPage.css';
 
+// A page to explain how to use this website
 function HelpPage() {
     return (
         <div className="HelpPage">

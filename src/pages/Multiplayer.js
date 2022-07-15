@@ -4,50 +4,32 @@ import {useNavigate} from "react-router-dom";
 import {Games} from "../components/Games"
 import { getCookie, setCookie } from "../extras/cookies";
 
+// API-URL
 const url = 'https://gruppe3.toni-barth.com/';
 
-async function createPlayer() {
-    let player = prompt("Bitte Spielername eingeben");
-
-    if (player != null && player != "") {
-        fetch(url + 'players/', {method: 'POST', headers: {'Content-Type':'application/json',}, body: JSON.stringify({name: player})})
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(ex => console.error(ex)); 
-    }
-}
-
+// Try to create a new game
 async function createGame(navigate) {
     let owner = getCookie("id");
     if (owner != "") {
+        // Player is logged in
+        // Create new lobby
         await fetch(url + 'games/', {method: 'POST', headers: {'Content-Type':'application/json',}, body: JSON.stringify({owner: owner})})
                 .then(response => response.json())
                 .then(data => {
+                    // Create new cookie with game id and navigate to the new lobby
                     console.log(data);
                     setCookie("game", data.id);
                     navigate("../gamelobby/" + data.id);
                 })
                 .catch(ex => console.error(ex));
     } else {
+        // Player is not logged in
+        // Navigate to log in page
         navigate("../login");
     }
 }
 
-async function deletePlayer() {
-    let player = prompt("Bitte Spielerid des zu löschenden Spielers eingeben");
-
-    if (player != null && player != "") {
-        fetch(url + 'players/' + player + '/', {method: 'DELETE'}).catch(ex => console.error(ex));
-    }
-}
-
-async function fetchPlayers() {
-    fetch(url + 'players/')
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(ex => console.error(ex)); 
-}
-
+// A page to create or join a lobby
 function Multiplayer() {
     let navigate = useNavigate();
     return (

@@ -16,10 +16,12 @@ const SIZES = ["btn--medium", "btn--large"];
 
 export const Button = ({children, type, onClick, buttonStyle, buttonSize}) => {
 
+    // Get button style from tag attribute
     const checkButtonStyle = STYLES.includes(buttonStyle) 
     ? buttonStyle 
     : STYLES[0];
 
+    // Get button size from tag attribute
     const checkButtonSize = SIZES.includes(buttonSize)
     ? buttonSize
     : SIZES[0];
